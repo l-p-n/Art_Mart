@@ -4,6 +4,7 @@
 
 <div class="container">
   <h1>Browse artworks</h1>
+  <p><%= link_to 'Add new artwork', new_artwork_path %></p>
 
   <div class="cards-container">
     <%= @artworks.each do |artwork| %>
@@ -15,7 +16,7 @@
 
         <div class="artwork-information">
           <div class="artwork-details">
-            <h2><%= artwork.title %></h2>
+            <h2><%= link_to artwork.title, artwork %></h2>
             <h4><%= artwork.artist %> | <%= artwork.date %></h4>
             <p><%= artwork.description %></p>
           </div>
@@ -33,4 +34,18 @@
 
 
 
+  <div class="container">
+    <h3>Browse artworks</h3>
+    <p><%= link_to 'Add new artwork', new_artwork_path %></p>
+  </div>
+
+  <tbody>
+    <% @artworks.each do |artwork| %>
+      <tr>
+        <td><p><%= artwork.title %></p></td>
+        <td><p><%= link_to 'Show', artwork %></p></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>

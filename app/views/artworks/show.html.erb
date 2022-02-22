@@ -1,0 +1,10 @@
+<h3><%= @artwork.title %></h3>
+<p><%= @artwork.artist %></p>
+<p><%= @artwork.date %></p>
+<p><%= @artwork.description %></p>
+<p><%= @artwork.price_per_day %></p>
+<p><%= @artwork.style %></p>
+
+<%= link_to "Artworks", artworks_path %>
+<br>
+<p><%= link_to 'Edit artwork', edit_artwork_path(@artwork) %></p>
