@@ -5,9 +5,9 @@ class CreateArtworks < ActiveRecord::Migration[6.1]
       t.float :price_per_day
       t.string :artist
       t.string :style
+      t.references :user, null: false, foreign_key: true
       t.text :description
       t.integer :date
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
