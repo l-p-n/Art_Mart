@@ -11,7 +11,8 @@
       <div class="artwork-card">
 
         <div class="artwork-photo">
-          <img src="https://i.picsum.photos/id/883/250/300.jpg?hmac=gahYTGRcpq6Ck6JiuOO7DDvOFllHeqLOonaxttqWIPM" alt="">
+          <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+          <%# <img src="https://i.picsum.photos/id/883/250/300.jpg?hmac=gahYTGRcpq6Ck6JiuOO7DDvOFllHeqLOonaxttqWIPM" alt=""> %>
         </div>
 
         <div class="artwork-information">
