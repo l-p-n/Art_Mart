@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
-body {
+
+.home-background {
   background-color: $pink;
 }
-
 .header {
   height: 50px;
 }
@@ -18,4 +18,6 @@ body {
   padding: 8px 24px;
   border-radius: 10px;
   background: white;
+  margin-left: auto;
+  margin-right: auto;
 }
