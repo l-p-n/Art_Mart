@@ -1,9 +1,29 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;600&display=swap');
-
+@import "config/colors";
 // Define fonts for body and headers
 $body-font: "Montserrat", "sans-serif";
 $headers-font: "Bebas Neue", "cursive";
+
+h1 {
+  color: $red;
+  size: 18px;
+}
+
+h2 {
+  color: $red;
+  size: 16px;
+}
+
+h3 {
+  color: $red;
+  size: 14px;
+}
+
+p {
+  color: $pink;
+  size: 12px;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

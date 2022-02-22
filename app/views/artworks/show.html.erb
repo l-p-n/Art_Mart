@@ -1,31 +1,15 @@
-<div class="container">
-<div class="container">
-  <%= @artwork.title%><br>
-  <%= @artwork.artist%><br>
-  <%= @artwork.date%><br>
+<div class="card-container">
+
+  <div class="artwork-img-lg">
+    <img src="/assets/Hockney-1024x809.jpeg" alt="">
+  </div>
+
+  <div class="details-container">
+      <h1><%= @artwork.title%></h1><br>
+      <h2><%= @artwork.artist%></h2><br>
+      <h3><%= @artwork.date%></h3><br>
+      <%= @artwork.style%><br>
+      <p><%= @artwork.description%></p><br>
+      <%= @artwork.price_per_day%><br>
+  </div>
 </div>
-
-<div class="container">
-  <%= @artwork.style%><br>
-</div>
-
-<div class="container">
-  <%= @artwork.style%><br>
-</div>
-
-<div class="container">
-  <%= @artwork.price_per_day%><br>
-</div>
-
-
-
-  <%# t.string "title"
-    t.float "price_per_day"
-    t.string "artist"
-    t.string "style"
-    t.bigint "user_id", null: false
-    t.text "description"
-    t.integer "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_artworks_on_user_id" %>
