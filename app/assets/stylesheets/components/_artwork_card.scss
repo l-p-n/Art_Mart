@@ -1,0 +1,31 @@
+.artwork-card {
+  width: 600px;
+  height: 360px;
+  background-color: white;
+  display: flex;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(20, 20, 20, 0.2);
+  h4, p {
+    color: rgb(10,10,10);
+  }
+}
+
+.artwork-photo img {
+  height: 360px;
+  width: 240px;
+  object-fit: cover;
+}
+
+.artwork-information {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artwork-price-tag {
+  p {
+    text-align: right;
+  }
+}
