@@ -7,7 +7,7 @@
   <p><%= link_to 'Add new artwork', new_artwork_path %></p>
 
   <div class="cards-container">
-    <%= @artworks.each do |artwork| %>
+    <% @artworks.each do |artwork| %>
       <div class="artwork-card">
 
         <div class="artwork-photo">
