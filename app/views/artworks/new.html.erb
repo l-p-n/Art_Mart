@@ -8,7 +8,7 @@
     <%= f.input :style, :collection => %w[Abstract Impressionist Cubist Realist Surrealist Minimalist Other]%>
     <%= f.input :description %>
     <%= f.input :date %>
-    <%= f.submit %>
+    <%= f.submit "Add artwork", class: "btn btn-slim" %>
   <% end %>
 
   <%= link_to "Back to artworks", artworks_path %>
