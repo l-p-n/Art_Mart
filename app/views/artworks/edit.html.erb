@@ -2,7 +2,7 @@
 
   <h1>Edit your listed artwork</h1>
 
-  <%= simple_form_for :artwork do |f| %>
+  <%= simple_form_for @artwork, method: :patch do |f| %>
   <%= f.input :title, label: "Title" %>
   <%= f.input :price_per_day, label: "Price" %>
   <%= f.input :artist, label: "Artist name" %>
