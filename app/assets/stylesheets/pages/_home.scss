@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+body {
+  background-color: $pink;
+}
+
+.header {
+  height: 50px;
+}
+
+#logo {
+  height: 500px;
+}
+
+.btn-flat {
+  color: $green;
+  font-weight: bold;
+  font-size: 36px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: white;
+}
