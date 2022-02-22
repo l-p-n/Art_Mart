@@ -5,6 +5,7 @@ ruby '3.0.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'cloudinary', '~> 1.16.0'
 gem "faker", "~> 2.19"
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
