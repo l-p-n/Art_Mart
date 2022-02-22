@@ -2,18 +2,32 @@
 
 <p id="notice"><%= notice %></p>
 
-  <div class="container">
-    <h3>Browse artworks</h3>
-    <p><%= link_to 'Add new artwork', new_artwork_path %></p>
-  </div>
+<div class="container">
+  <h1>Browse artworks</h1>
+  <p><%= link_to 'Add new artwork', new_artwork_path %></p>
 
-  <tbody>
-    <% @artworks.each do |artwork| %>
-      <tr>
-        <td><p><%= artwork.title %></p></td>
-        <td><p><%= link_to 'Show', artwork %></p></td>
-      </tr>
+  <div class="cards-container">
+    <%= @artworks.each do |artwork| %>
+      <div class="artwork-card">
+
+        <div class="artwork-photo">
+          <img src="https://i.picsum.photos/id/883/250/300.jpg?hmac=gahYTGRcpq6Ck6JiuOO7DDvOFllHeqLOonaxttqWIPM" alt="">
+        </div>
+
+        <div class="artwork-information">
+          <div class="artwork-details">
+            <h2><%= link_to artwork.title, artwork %></h2>
+            <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+            <p><%= artwork.description %></p>
+          </div>
+          <div class="artwork-price-tag">
+            <p><strong>£<%= artwork.price_per_day %></strong> per day</p>
+            <p><%= artwork.style %></p>
+          </div>
+
+        </div>
+
+      </div>
     <% end %>
-  </tbody>
-</table>
-<br>
+  </div>
+</div>
