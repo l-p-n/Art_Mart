@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+
+<p id="notice"><%= notice %></p>
+
+  <div class="container">
+    Browse artworks
+  </div>
+
+  <tbody>
+    <% @artworks.each do |artwork| %>
+      <tr>
+        <td><%= artwork.name %></td>
+        <td><%= link_to 'Show', artwork %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
