@@ -19,11 +19,13 @@
           <div class="artwork-details">
             <h2><%= link_to artwork.title, artwork %></h2>
             <h4><%= artwork.artist %> | <%= artwork.date %></h4>
-            <p><%= artwork.description %></p>
+            <div class="description-container">
+              <p><%= artwork.description %></p>
+            </div>
           </div>
           <div class="artwork-price-tag">
-            <p><strong>£<%= artwork.price_per_day %></strong> per day</p>
             <p><%= artwork.style %></p>
+            <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
           </div>
 
         </div>

@@ -5,7 +5,7 @@
   display: flex;
   border-radius: 3px;
   box-shadow: 2px 2px 5px rgba(20, 20, 20, 0.2);
-  h4, p {
+  h4, h3, p {
     color: rgb(10,10,10);
   }
 }
@@ -14,6 +14,16 @@
   height: 360px;
   width: 240px;
   object-fit: cover;
+}
+
+.description-container {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+   -webkit-line-clamp: 5; /* number of lines to show */
+           line-clamp: 5;
+   -webkit-box-orient: vertical;
+  width: 328px;
 }
 
 .artwork-information {
@@ -25,7 +35,7 @@
 }
 
 .artwork-price-tag {
-  p {
+  p, h3 {
     text-align: right;
   }
 }
