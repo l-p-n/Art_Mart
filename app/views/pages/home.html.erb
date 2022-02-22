@@ -1,22 +1,22 @@
 <div class="container-home">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 text-center">
-        <img id="logo" src="assets/ArtMartTransparent.png" alt="logo of ArtMart">
+    <div class="col-12 col-lg-6 text-center mt-5">
+        <img id="logo" src="assets/ArtMartTransparentCropped.png" alt="logo of ArtMart">
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-12 col-lg-6 text-center">
-        <h3>Slogan goes here</h3>
+        <h1>Your artwork marketplace</h1>
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-12 col-lg-6 text-center">
-       <a class="btn btn-bold" href="#">Start your collection</a>
+      <%= link_to "Start your collection", artworks_path, class: "btn btn-bold" %>
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-12 col-lg-6 text-center">
-        <h5>Already have an account? Sign in</h5>
+        <h5>Already have an account? <%= link_to "Sign in", new_user_session_path, class: "red"%></h5>
     </div>
   </div>
 </div>
