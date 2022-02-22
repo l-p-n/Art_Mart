@@ -1,15 +1,15 @@
 <div class="card-container">
 
   <div class="artwork-img-lg">
-    <img src="/assets/Hockney-1024x809.jpeg" alt="">
+    <img src = "/assets/Hockney-1024x809.jpeg">
   </div>
 
   <div class="details-container">
-      <h1><%= @artwork.title%></h1><br>
-      <h2><%= @artwork.artist%></h2><br>
-      <h3><%= @artwork.date%></h3><br>
+      <h1><%= @artwork.title%></h1>
+      <h2><%= @artwork.artist%></h2>
+      <h3><%= @artwork.date%></h3>
       <%= @artwork.style%><br>
-      <p><%= @artwork.description%></p><br>
-      <%= @artwork.price_per_day%><br>
+      <p><%= @artwork.description%></p>
+      <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
   </div>
 </div>
