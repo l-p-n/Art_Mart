@@ -31,21 +31,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-  <div class="container">
-    <h3>Browse artworks</h3>
-    <p><%= link_to 'Add new artwork', new_artwork_path %></p>
-  </div>
-
-  <tbody>
-    <% @artworks.each do |artwork| %>
-      <tr>
-        <td><p><%= artwork.title %></p></td>
-        <td><p><%= link_to 'Show', artwork %></p></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
