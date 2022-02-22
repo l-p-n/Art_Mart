@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Add an artwork</h1>
+  <%= simple_form_for @artwork do |f| %>
+    <%= f.input :title %>
+    <%= f.input :price_per_day %>
+    <%= f.input :artist %>
+    <%= f.input :style, :collection => %w[Abstract Impressionist Cubist Realist Surrealist Minimalist Other]%>
+    <%= f.input :description %>
+    <%= f.input :date %>
+    <%= f.submit %>
+  <% end %>
+</div>
