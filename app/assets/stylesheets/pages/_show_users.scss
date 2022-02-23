@@ -1,0 +1,23 @@
+.nav-item button {
+  font-family: $headers-font;
+  &:hover {
+    color: $pink;
+  }
+}
+
+.cards-my-account-container {
+  display: grid;
+  grid-column-gap: 16px;
+  row-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  border-radius: none;
+  box-shadow: none;
+  margin: 20px;
+}
+
+.btn-slim {
+  align-items: center;
+  width: 300px;
+  margin: 20px;
+}
