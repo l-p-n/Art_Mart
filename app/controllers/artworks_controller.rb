@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @artworks = Artwork.all
@@ -6,6 +7,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -31,12 +33,6 @@ class ArtworksController < ApplicationController
     @artwork.update(artwork_params)
 
     redirect_to artwork_path(@artwork)
-  end
-
-  private
-
-  def artwork_params
-    params.require(:artwork).permit(:title, :style, :description, :artist, :date, :price_per_day)
   end
 
   private

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>My booking</h1>
+  <p><%= @booking.artwork.title %></p>
+  <p><%= @booking.artwork.artist %></p>
+  <p><%= @booking.artwork.style %></p>
+  <p><%= @booking.artwork.date %></p>
+  <p><%= @booking.artwork.description %></p>
+  <p><%= @booking.artwork.price_per_day %></p>
+  <img src="<%= @booking.artwork.photo %>" alt="">
+
+  <p><%= @booking.start_date %></p>
+  <p><%= @booking.end_date %></p>
+
+  <% duration = @booking.end_date - @booking.start_date %>
+  <% total_price = duration * @booking.artwork.price_per_day %>
+  <h5>Total price: £<%= total_price %></h5>
+
+</div>
