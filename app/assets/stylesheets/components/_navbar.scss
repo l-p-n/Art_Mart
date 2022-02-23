@@ -2,12 +2,18 @@
   justify-content: space-between;
   background: $pink;
   font-family: $headers-font;
-  margin: 0;
-  padding: 0;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
 }
 
 .nav-link {
   color: $red;
+  font-size: 24px;
+  margin: 0 16px;
 }
 
 .navbar-lewagon .navbar-collapse {

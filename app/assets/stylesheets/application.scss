@@ -11,10 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/navbar";
-
-* {
-  margin: 0;
-  padding: 0;
-}
 @import "pages/home";
+@import "components/navbar";
+@import "components/button";
+
+

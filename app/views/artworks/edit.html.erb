@@ -1,17 +1,21 @@
 <div class="container">
-
-  <h1>Edit your listed artwork</h1>
-
-  <%= simple_form_for @artwork, method: :patch do |f| %>
-  <%= f.input :title, label: "Title" %>
-  <%= f.input :price_per_day, label: "Price" %>
-  <%= f.input :artist, label: "Artist name" %>
-  <%= f.input :date, label: "Date" %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.input :style, label: "Style" %>
-  <%= f.submit "Update artwork" %>
-  <% end %>
-
-  <%= link_to "Back to artworks",  artworks_path %>
-
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 mt-5">
+      <h1>Edit your listed artwork</h1>
+      <br>
+      <%= simple_form_for @artwork, method: :patch do |f| %>
+      <%= f.input :title, label: "Title" %>
+      <%= f.input :price_per_day, label: "Price" %>
+      <%= f.input :artist, label: "Artist name" %>
+      <%= f.input :date, label: "Date" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :style, label: "Style" %>
+      <%= f.submit "Update artwork", class: "btn btn-slim" %>
+      <% end %>
+      <br>
+      <%= link_to "Back to artworks",  artworks_path %>
+      <br>
+      <br>
+    </div>
+  </div>
 </div>

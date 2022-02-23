@@ -1,0 +1,15 @@
+.btn-bold {
+  color: $green;
+  font-weight: bold;
+  font-size: 36px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: white;
+}
+
+.btn-slim {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: $green;;
+}
