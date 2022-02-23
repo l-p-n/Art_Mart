@@ -1,7 +1,11 @@
 <div class="card-container">
 
   <div class="artwork-img-lg">
-    <img src = "/assets/Hockney-1024x809.jpeg">
+    <% if @artwork.photo.key %>
+            <%= cl_image_tag @artwork.photo.key, crop: :fill %>
+          <% else %>
+            <img src="/assets/Hockney-1024x809.jpeg" alt="">
+    <% end %>
   </div>
 
   <div class="details-container">

@@ -1,0 +1,132 @@
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+
+<p id="notice"><%= notice %></p>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My collection</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My bookings</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">My rentals</button>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="cards-my-account-container">
+      <% @user.artworks.each do |artwork| %>
+        <div class="artwork-card">
+
+          <div class="artwork-photo">
+            <% if artwork.photo.key %>
+              <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+            <% else %>
+              <img src="https://picsum.photos/240/360" alt="">
+            <% end %>
+          </div>
+
+          <div class="artwork-information">
+            <div class="artwork-details">
+              <h2><%= link_to artwork.title, artwork %></h2>
+              <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+              <div class="description-container">
+                <p><%= artwork.description %></p>
+              </div>
+            </div>
+            <div class="artwork-price-tag">
+              <p><%= artwork.style %></p>
+              <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
+            </div>
+
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "Upload a new artwork", new_artwork_path, class: "btn btn-slim" %>
+  </div>
+
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="cards-my-account-container">
+      <% @user.bookings.each do |artwork| %>
+        <div class="artwork-card">
+
+          <div class="artwork-photo">
+            <% if artwork.photo.key %>
+              <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+            <% else %>
+              <img src="https://picsum.photos/240/360" alt="">
+            <% end %>
+          </div>
+
+          <div class="artwork-information">
+            <div class="artwork-details">
+              <h2><%= link_to artwork.title, artwork %></h2>
+              <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+              <div class="description-container">
+                <p><%= artwork.description %></p>
+              </div>
+            </div>
+            <div class="artwork-price-tag">
+              <p><%= artwork.style %></p>
+              <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
+            </div>
+
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <h3>Menu 2</h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="my-bookings" class="tab-pane fade">
+
+  </div>
+
+  <div id="my-rentals" class="tab-pane fade">
+
+  </div>
+</div>
+
+
+</div>
