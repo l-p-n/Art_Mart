@@ -14,77 +14,79 @@
   </li>
 </ul>
 
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <div class="cards-my-account-container">
-      <% @user.artworks.each do |artwork| %>
-        <div class="artwork-card">
+<div class="container">
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="cards-my-account-container">
+        <% @user.artworks.each do |artwork| %>
+          <div class="artwork-card">
 
-          <div class="artwork-photo">
-            <% if artwork.photo.key %>
-              <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
-            <% else %>
-              <img src="https://picsum.photos/240/360" alt="">
-            <% end %>
-          </div>
+            <div class="artwork-photo">
+              <% if artwork.photo.key %>
+                <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+              <% else %>
+                <img src="https://picsum.photos/240/360" alt="">
+              <% end %>
+            </div>
 
-          <div class="artwork-information">
-            <div class="artwork-details">
-              <h2><%= link_to artwork.title, artwork %></h2>
-              <h4><%= artwork.artist %> | <%= artwork.date %></h4>
-              <div class="description-container">
-                <p><%= artwork.description %></p>
+            <div class="artwork-information">
+              <div class="artwork-details">
+                <h2><%= link_to artwork.title, artwork %></h2>
+                <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+                <div class="description-container">
+                  <p><%= artwork.description %></p>
+                </div>
               </div>
-            </div>
-            <div class="artwork-price-tag">
-              <p><%= artwork.style %></p>
-              <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
-            </div>
-
-          </div>
-
-        </div>
-      <% end %>
-    </div>
-    <%= link_to "Upload a new artwork", new_artwork_path, class: "btn btn-slim" %>
-  </div>
-
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="cards-my-account-container">
-      <% @user.bookings.each do |artwork| %>
-        <div class="artwork-card">
-
-          <div class="artwork-photo">
-            <% if artwork.photo.key %>
-              <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
-            <% else %>
-              <img src="https://picsum.photos/240/360" alt="">
-            <% end %>
-          </div>
-
-          <div class="artwork-information">
-            <div class="artwork-details">
-              <h2><%= link_to artwork.title, artwork %></h2>
-              <h4><%= artwork.artist %> | <%= artwork.date %></h4>
-              <div class="description-container">
-                <p><%= artwork.description %></p>
+              <div class="artwork-price-tag">
+                <p><%= artwork.style %></p>
+                <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
               </div>
-            </div>
-            <div class="artwork-price-tag">
-              <p><%= artwork.style %></p>
-              <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
+
             </div>
 
           </div>
-
-        </div>
-      <% end %>
+        <% end %>
+      <%= link_to "Upload a new artwork", new_artwork_path, class: "btn btn-slim", id: "upload-artwork" %>
+      </div>
     </div>
-  </div>
 
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="cards-my-account-container">
+        <% @user.bookings.each do |artwork| %>
+          <div class="artwork-card">
+
+            <div class="artwork-photo">
+              <% if artwork.photo.key %>
+                <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+              <% else %>
+                <img src="https://picsum.photos/240/360" alt="">
+              <% end %>
+            </div>
+
+            <div class="artwork-information">
+              <div class="artwork-details">
+                <h2><%= link_to artwork.title, artwork %></h2>
+                <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+                <div class="description-container">
+                  <p><%= artwork.description %></p>
+                </div>
+              </div>
+              <div class="artwork-price-tag">
+                <p><%= artwork.style %></p>
+                <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
+              </div>
+
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <h3>Menu 2</h3>
+      <p>Some content in menu 2.</p>
+    </div>
   </div>
 </div>
 

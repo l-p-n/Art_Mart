@@ -1,5 +1,5 @@
 .artwork-card {
-  width: 600px;
+  width: 630px;
   height: 360px;
   background-color: white;
   display: flex;
@@ -14,6 +14,7 @@
   height: 360px;
   width: 240px;
   object-fit: cover;
+  border-radius: 3px 0 0 3px;
 }
 
 .description-container {

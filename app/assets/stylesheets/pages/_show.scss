@@ -1,20 +1,19 @@
 .card-container {
-  width: 100%;
+  width: 95%;
   background-color: white;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 3px;
-  box-shadow: 2px 2px 5px rgba(20, 20, 20, 0.2);
   padding: 16px;
-  margin: 20px;
+  margin: auto;
 }
 
 .details-container {
   width: 50%;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 0 20px 0 20px;
 }
 
 .artwork-img-lg {

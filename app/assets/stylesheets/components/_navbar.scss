@@ -14,6 +14,7 @@
   color: $red;
   font-size: 24px;
   margin: 0 16px;
+  padding: 0 !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -26,4 +27,18 @@
 
 .navbar-lewagon .nav-item {
   color: $red;
+}
+
+.nav-item {
+  position: relative;
+}
+
+
+.nav-avatar {
+  position: absolute;
+  right: 20px;
+}
+
+.browse-item {
+  margin-right: 120px;
 }
