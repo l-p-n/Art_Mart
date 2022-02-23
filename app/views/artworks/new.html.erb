@@ -4,13 +4,13 @@
       <h1>Add an artwork</h1>
       <br>
       <%= simple_form_for @artwork do |f| %>
-        <%= f.input :title %>
-        <%= f.input :artist %>
-        <%= f.input :photo, as: :file %>
-        <%= f.input :price_per_day %>
-        <%= f.input :style, :collection => %w[Abstract Impressionist Cubist Realist Surrealist Minimalist Other]%>
-        <%= f.input :description %>
-        <%= f.input :date %>
+        <%= f.input :title, label: "Title" %>
+        <%= f.input :artist, label: "Artist" %>
+        <%= f.input :photo, as: :file, label: "Photo" %>
+        <%= f.input :price_per_day, label: "Price per day" %>
+        <%= f.input :style, label: "Style", :collection => %w[Abstract Impressionist Cubist Realist Surrealist Minimalist Other]%>
+        <%= f.input :description, label: "Description" %>
+        <%= f.input :date, label: "Date" %>
         <%= f.submit "Add artwork", class: "btn btn-slim" %>
       <% end %>
       <br>
