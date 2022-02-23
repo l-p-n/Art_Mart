@@ -15,5 +15,12 @@
       <%= @artwork.style%><br>
       <p><%= @artwork.description%></p>
       <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
+      <br>
+      <%= simple_form_for [@artwork, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Request booking", class: "btn btn-slim" %>
+      <% end %>
+
   </div>
 </div>

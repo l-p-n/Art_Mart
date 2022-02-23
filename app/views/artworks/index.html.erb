@@ -3,8 +3,16 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h1>Browse artworks</h1>
-  <p><%= link_to 'Add new artwork', new_artwork_path %></p>
+  <div class="text-center border-bottom my-4">
+    <h1>Welcome to ArtMart</h1>
+    <h3>The best place to rent artworks online</h3>
+    <p>ArtMart is an easy-to-use service that helps you enjoy your favourite artworks without breaking the bank.<br>
+    Why spend millions on a Picasso painting when you could rent it for just a fraction of the price? <br>
+    Browse today and discover some of the best artists in history! </p>
+
+  </div>
+
+  <h2 class="my-4">Browse artworks</h2>
 
   <div class="cards-container">
     <% @artworks.each do |artwork| %>
