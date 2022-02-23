@@ -11,8 +11,11 @@
       <div class="artwork-card">
 
         <div class="artwork-photo">
-          <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
-          <%# <img src="https://i.picsum.photos/id/883/250/300.jpg?hmac=gahYTGRcpq6Ck6JiuOO7DDvOFllHeqLOonaxttqWIPM" alt=""> %>
+          <% if artwork.photo.key %>
+            <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+          <% else %>
+            <img src="https://picsum.photos/240/360" alt="">
+          <% end %>
         </div>
 
         <div class="artwork-information">
