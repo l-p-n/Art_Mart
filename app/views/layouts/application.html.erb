@@ -11,11 +11,11 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
+    <%= render "shared/navbar" %>
 
-  <body class="<%= @homepage ? "home-background" : "" %>">
+    <body class="<%= @homepage ? "home-background" : "" %>">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>
