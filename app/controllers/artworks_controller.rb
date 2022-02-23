@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @artworks = Artwork.all
@@ -6,6 +7,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
