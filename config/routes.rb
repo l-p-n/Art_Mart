@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   resources :artworks do
     resources :bookings, only: [:create]
   end
+  
   resources :bookings, only: [:show]
+  
+  get "pages/about", to: 'pages#about'
+
 end
