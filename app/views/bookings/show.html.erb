@@ -3,7 +3,7 @@
 <% if @booking.status == "approved" %>
   <h1 class="pt-5 pb-2">Booking confirmation</h1>
   <p>Your booking of <strong><%= @booking.artwork.title %></strong> is confirmed</p>%>
-<% else %>
+<% elsif @booking.status != "approved" && @booking.status != "declined" %>
   <h1 class="pt-5 pb-2">Booking review</h1>
   <p>Your booking request of <strong><%= @booking.artwork.title %></strong> is pending approval</p>
 <% end %>

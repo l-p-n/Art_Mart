@@ -4,8 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.artwork = @artwork
     @booking.user = current_user
-    @artwork.booking = @booking
-    # TODO: correct the paths below!!
+    # @artwork.booking = @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -21,18 +20,24 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(status: "approved")
       if @booking.status == "approved"
-        flash[:success] = "Booking successfully approved"
-        redirect_to booking_path(@booking)
-      else
-        flash[:error] = "Booking not approved"
-        redirect_to artworks_path
+        flash[:notice] = "Booking successfully approved"
+        redirect_to user_path(current_user)
+      end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "declined")
+      if @booking.status == "declined"
+        flash[:notice] = "Booking declined"
+        redirect_to user_path(current_user)
       end
   end
 
   private
 
   def booking_params
-    # TODO: check if need to add :user_id and :artwork_id to strong params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+    # TODO: check if need to add :user_id, :status and :artwork_id to strong params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
