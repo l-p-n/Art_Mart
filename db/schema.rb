@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_140244) do
     t.bigint "artwork_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "status", default: false
+    t.string "status"
     t.index ["artwork_id"], name: "index_bookings_on_artwork_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

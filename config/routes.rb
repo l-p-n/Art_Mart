@@ -7,8 +7,14 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :users, only: [:show]
-  
+
   resources :bookings, only: [:show]
-  
+
   get "pages/about", to: 'pages#about'
+
+  resources :bookings do
+    member do
+      post :approve
+    end
+  end
 end
