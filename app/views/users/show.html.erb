@@ -52,8 +52,7 @@
 
     <div class="tab-pane fade" id="my-bookings" role="tabpanel" aria-labelledby="profile-tab">
       <div class="cards-my-account-container">
-      dummy text
-        <% @user.artworks.bookings.each do |booking| %>
+        <% @artworks_bookings.each do |booking| %>
           <div class="artwork-card">
 
             <div class="artwork-photo">
@@ -66,21 +65,22 @@
 
             <div class="artwork-information">
               <div class="artwork-details">
-                <h2><%= link_to booking.artwork.title, artwork %></h2>
+                <%# <h2><%= link_to booking.artwork.title, artwork_path %></h2>
                 <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
                 <div class="description-container">
                   <p><%= booking.artwork.description %></p>
                 </div>
               </div>
               <div class="artwork-price-tag">
-                <p><%= booking.artwork.style %></p>
                 <h3><strong>£<%= booking.artwork.price_per_day %></strong> per day</h3>
               </div>
               <div class="booking-details">
-                <p>Rented to<strong><%= booking.user.first_name %><%= booking.user.last_name %></strong></p>
-                <p>From<strong><%= booking.start_date %><%= booking.end_date %></strong></p>
+                <p>Rented to <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
+                <p>From <strong><%= booking.start_date %> to <%= booking.end_date %></strong></p>
                 <% booking_length = (booking.start_date - booking.end_date).to_i%>
-                <h3>Total:<%= booking_length %>days</h3>
+              </div>
+              <div class="booking-overview">
+                <h3>Total: <%= booking_length %> days</h3>
                 <h3>Amount due: £<%= booking_length * booking.artwork.price_per_day %></h3>
               </div>
             </div>
@@ -91,7 +91,6 @@
 
     <div class="tab-pane fade" id="my-rentals" role="tabpanel" aria-labelledby="contact-tab">
       <div class="cards-my-account-container">
-      dummy text 2
         <% @user.bookings.each do |booking| %>
           <div class="artwork-card">
 
@@ -105,7 +104,7 @@
 
             <div class="artwork-information">
               <div class="artwork-details">
-                <h2><%= link_to booking.artwork.title, artwork %></h2>
+                <h2><%= link_to booking.artwork.title, artwork_path %></h2> %>
                 <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
                 <div class="description-container">
                   <p><%= booking.artwork.description %></p>
