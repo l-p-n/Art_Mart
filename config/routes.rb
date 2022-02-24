@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get "pages/about", to: 'pages#about'
 
   post "bookings/:id/approve", to: 'bookings#approve', as: 'approve_booking'
+  post "bookings/:id/decline", to: 'bookings#decline', as: 'decline_booking'
 end
