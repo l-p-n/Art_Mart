@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.artwork = @artwork
     @booking.user = current_user
-    # @artwork.booking = @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else

@@ -69,24 +69,18 @@
             </div>
 
             <div class="artwork-information">
-              <div class="artwork-details">
-                <%# <h2><%= link_to booking.artwork.title, artwork_path %></h2>
+              <div class="artwork-details-my-bookings">
+                <h2><%= link_to booking.artwork.title, artwork_path(booking.artwork_id) %></h2>
                 <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
-                <div class="description-container">
-                  <p><%= booking.artwork.description %></p>
-                </div>
-              </div>
-              <div class="artwork-price-tag">
-                <h3><strong>£<%= booking.artwork.price_per_day %></strong> per day</h3>
               </div>
               <div class="booking-details">
                 <p>Rented to <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
-                <p>From <strong><%= booking.start_date %> to <%= booking.end_date %></strong></p>
-                <% booking_length = (booking.start_date - booking.end_date).to_i%>
+                <p>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
+                <% booking_length = (booking.end_date - booking.start_date).to_i%>
               </div>
               <div class="booking-overview">
-                <h3>Total: <%= booking_length %> days</h3>
-                <h3>Amount due: £<%= booking_length * booking.artwork.price_per_day %></h3>
+                <h2>Total |  <%= booking_length %> days</h2>
+                <h2>Amount due | £<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
               </div>
             </div>
           </div>
@@ -121,22 +115,17 @@
 
             <div class="artwork-information">
               <div class="artwork-details">
-                <h2><%= link_to booking.artwork.title, artwork_path %></h2> %>
+                <h2><%= link_to booking.artwork.title, artwork_path %></h2>
                 <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
-                <div class="description-container">
-                  <p><%= booking.artwork.description %></p>
-                </div>
-              </div>
-              <div class="artwork-price-tag">
-                <p><%= booking.artwork.style %></p>
-                <h3><strong>£<%= booking.artwork.price_per_day %></strong> per day</h3>
               </div>
               <div class="booking-details">
-                <p>From the collection of<strong><%= booking.artwork.user.first_name %><%= booking.artwork.user.last_name %></strong></p>
-                <p>Yours from<strong><%= booking.start_date %><%= booking.end_date %></strong></p>
-                <% booking_length = (booking.start_date - booking.end_date).to_i%>
-                <h3>Total:<%= booking_length %>days</h3>
-                <h3>Amount due: £<%= booking_length * booking.artwork.price_per_day %></h3>
+                <p>From the collection of <strong><%= booking.artwork.user.first_name %> <%= booking.artwork.user.last_name %></strong></p>
+                <p>Yours from <strong><%= booking.start_date %> </strong>to <strong><%= booking.end_date %></strong></p>
+                <% booking_length = (booking.end_date - booking.start_date).to_i%>
+              </div>
+              <div class="booking-overview">
+                <h2>Total | <%= booking_length %> days</h2>
+                <h2>Amount due | £<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
               </div>
             </div>
           </div>
