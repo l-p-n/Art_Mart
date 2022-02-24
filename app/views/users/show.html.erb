@@ -10,6 +10,9 @@
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#my-bookings" type="button" role="tab" aria-controls="profile" aria-selected="false">My bookings</button>
   </li>
   <li class="nav-item" role="presentation">
+    <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#my-requests" type="button" role="tab" aria-controls="requests" aria-selected="false">My requests</button>
+  </li>
+  <li class="nav-item" role="presentation">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#my-rentals" type="button" role="tab" aria-controls="contact" aria-selected="false">My rentals</button>
   </li>
 </ul>
@@ -51,8 +54,10 @@
     </div>
 
     <div class="tab-pane fade" id="my-bookings" role="tabpanel" aria-labelledby="profile-tab">
+      <h2 class="mt-4">Approved bookings of my artwork</h2>
       <div class="cards-my-account-container">
         <% @artworks_bookings.each do |booking| %>
+        <% if booking.status == "approved" %>
           <div class="artwork-card">
 
             <div class="artwork-photo">
@@ -79,8 +84,20 @@
               </div>
             </div>
           </div>
+          <% end %>
         <% end %>
       </div>
+    </div>
+
+    <div class="tab-pane fade" id="my-requests" role="tabpanel" aria-labelledby="requests-tab">
+      <h2 class="mt-4">Booking requests pending approval</h2>
+      <% @artworks_bookings.each do |booking| %>
+        <% unless booking.status == "approved" || booking.status == "declined" %>
+        <%= booking.artwork.title %>
+        <%= link_to 'Approve', approve_booking_path(booking), class: "btn btn-slim", method: :post %>
+        <%= link_to 'Decline', decline_booking_path(booking), class: "btn btn-slim", method: :post %>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="tab-pane fade" id="my-rentals" role="tabpanel" aria-labelledby="contact-tab">
