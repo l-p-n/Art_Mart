@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :users, only: [:show]
-  
+
   resources :bookings, only: [:show]
-  
+
   get "pages/about", to: 'pages#about'
+
+  post "bookings/:id/approve", to: 'bookings#approve', as: 'approve_booking'
 end
