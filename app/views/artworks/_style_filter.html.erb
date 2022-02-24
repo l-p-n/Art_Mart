@@ -1,15 +1,31 @@
-  <%= form_tag artworks_path, method: :get do %>
-    <%= radio_button_tag :query, 'impressionist' %>
-    <label for="impressionist">Impressionist</label>
-    <%= radio_button_tag :query, 'abstract' %>
-    <label for="abstract">Abstract</label>
-    <%= radio_button_tag :query, 'cubist' %>
-    <label for="abstract">Cubist</label>
-    <%= radio_button_tag :query, 'surrealist' %>
-    <label for="surrealist">Surrealist</label>
-    <%= radio_button_tag :query, 'realist' %>
-    <label for="realist">Realist</label>
-    <%= radio_button_tag :query, 'minimalist' %>
-    <label for="minimalist">Minimalist</label>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <h2> Filter by Style </h2>
+
+  <%= form_tag artworks_path, class: "d-flex align-items-center justify-content-center", method: :get do %>
+    <ul class="radio-buttons list-unstyled list-group-horizontal">
+      <li>
+        <%= radio_button_tag :query, 'impressionist', class:"radio-button" %>
+        <label for="impressionist">Impressionist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'abstract', class:"radio-button" %>
+        <label for="abstract">Abstract</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'cubist', class:"radio-button" %>
+        <label for="cubist">Cubist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'surrealist', class:"radio-button" %>
+        <label for="surrealist">Surrealist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'realist', class:"radio-button" %>
+        <label for="realist">Realist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'minimalist', class:"radio-button" %>
+        <label for="minimalist">Minimalist</label>
+      </li>
+    </ul>
+    <%= submit_tag "Filter", class: "btn btn-primary" %>
   <% end %>
