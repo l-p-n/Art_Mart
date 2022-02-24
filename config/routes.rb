@@ -12,9 +12,5 @@ Rails.application.routes.draw do
 
   get "pages/about", to: 'pages#about'
 
-  resources :bookings do
-    member do
-      post :approve
-    end
-  end
+  post "bookings/:id/approve", to: 'bookings#approve', as: 'approve_booking'
 end

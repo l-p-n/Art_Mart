@@ -17,14 +17,14 @@ class BookingsController < ApplicationController
 
   def approve
     @booking = Booking.find(params[:id])
-     @booking.update(state: "approved")
-     if @booking.state == "approved"
-       flash[:success] = "Booking successfully approved"
-       redirect_to bookings_path
-     else
-       flash[:error] = "Booking not approved"
-       redirect_to bookings_path
-     end
+    @booking.update(status: "approved")
+      if @booking.status == "approved"
+        flash[:success] = "Booking successfully approved"
+        redirect_to booking_path(@booking)
+      else
+        flash[:error] = "Booking not approved"
+        redirect_to artworks_path
+      end
   end
 
   private
