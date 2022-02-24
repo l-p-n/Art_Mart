@@ -9,8 +9,8 @@ class Artwork < ApplicationRecord
   validates :date, length: { is: 4 }
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_artist,
-    against: [ :title, :artist ],
+  pg_search_scope :search_by_title_artist_and_style,
+    against: [ :title, :artist, :style ],
     using: {
       tsearch: { prefix: true }
     }

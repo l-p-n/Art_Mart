@@ -13,14 +13,8 @@
 
   </div>
 
-  <%= form_tag artworks_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <%= render "search" %>
+  <%= render "style_filter" %>
 
   <h2 class="my-4">Browse artworks</h2>
 
