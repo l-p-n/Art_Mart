@@ -1,28 +1,39 @@
-<div class="card-container">
+<div class="main-container">
+  <div class="card-container">
+    <div class="artwork-img-lg">
+      <% if @artwork.photo.key %>
+              <%= cl_image_tag @artwork.photo.key, crop: :fill %>
+            <% else %>
+              <img src="/assets/Hockney-1024x809.png" alt="">
+      <% end %>
+    </div>
 
-  <div class="artwork-img-lg">
-    <% if @artwork.photo.key %>
-            <%= cl_image_tag @artwork.photo.key, crop: :fill %>
-          <% else %>
-            <img src="/assets/Hockney-1024x809.png" alt="">
-    <% end %>
+    <div class="details-container">
+        <h1><%= @artwork.title%></h1>
+        <h2><%= @artwork.artist%></h2>
+        <h3><%= @artwork.date%></h3>
+        <%= @artwork.style%><br>
+        <p><%= @artwork.description%></p>
+        <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
+        <br>
+        <%= simple_form_for [@artwork, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Request booking", class: "btn btn-slim" %>
+        <% end %>
+
+
+
+    </div>
+
+
   </div>
-
-  <div class="details-container">
-      <h1><%= @artwork.title%></h1>
-      <h2><%= @artwork.artist%></h2>
-      <h3><%= @artwork.date%></h3>
-      <%= @artwork.style%><br>
-      <p><%= @artwork.description%></p>
-      <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
-      <br>
-      <%= simple_form_for [@artwork, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit "Request booking", class: "btn btn-slim" %>
+  <div>
+      <% @artwork.comments.each do |comment| %>
+        <h3>Author: <%= comment.user.first_name %> <%= comment.user.last_name %></h3>
+        <p>Comment: <%= comment.body %></p>
       <% end %>
 
-
-
+      <%= simple_form_for [@artwork, @comment] %>
   </div>
 </div>

@@ -11,6 +11,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+    @comments = @artwork.comments
     @booking = Booking.new
   end
 
