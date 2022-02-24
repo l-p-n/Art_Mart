@@ -1,12 +1,16 @@
-.card-container {
+.main-container {
+  display: flex;
+  flex-direction: column;
   width: 95%;
+  margin: auto;
+}
+
+.card-container {
   background-color: white;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 3px;
-  padding: 16px;
-  margin: auto;
 }
 
 .details-container {

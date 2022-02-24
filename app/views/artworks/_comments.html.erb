@@ -1,0 +1,24 @@
+<h2>Comments:</h2>
+<% @artwork.comments.each do |comment| %>
+  <div class="comment-container border-bottom">
+    <div class = "comment-user-img">
+    <%= image_tag "default_avatar.png", class: "avatar" %>
+    </div>
+
+    <div class="comment-text">
+    <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
+    <p><%= comment.body %></p>
+    </div>
+
+  </div>
+
+<% end %>
+
+  <%= simple_form_for [@artwork, @comment], class: "inline" do |f| %>
+<div class="d-flex">
+      <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
+      <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
+        <i class="fa-solid fa-paper-plane"></i>
+      <% end %>
+</div>
+  <% end %>

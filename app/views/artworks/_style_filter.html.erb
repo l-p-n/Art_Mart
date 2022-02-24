@@ -2,27 +2,27 @@
   <%= form_tag artworks_path, class: "d-flex align-items-center justify-content-center", method: :get do %>
     <ul class="radio-buttons list-unstyled list-group-horizontal">
       <li>
-        <%= radio_button_tag :query, 'impressionist', class:"radio-button" %>
+        <%= radio_button_tag :query, 'impressionist', false, class:"radio-button" %>
         <label for="impressionist">Impressionist</label>
       </li>
       <li>
-        <%= radio_button_tag :query, 'abstract', class:"radio-button" %>
+        <%= radio_button_tag :query, 'abstract', false, class:"radio-button" %>
         <label for="abstract">Abstract</label>
       </li>
       <li>
-        <%= radio_button_tag :query, 'cubist', class:"radio-button" %>
+        <%= radio_button_tag :query, 'cubist', false, class:"radio-button" %>
         <label for="cubist">Cubist</label>
       </li>
       <li>
-        <%= radio_button_tag :query, 'surrealist', class:"radio-button" %>
+        <%= radio_button_tag :query, 'surrealist', false, class:"radio-button" %>
         <label for="surrealist">Surrealist</label>
       </li>
       <li>
-        <%= radio_button_tag :query, 'realist', class:"radio-button" %>
+        <%= radio_button_tag :query, 'realist', false, class:"radio-button" %>
         <label for="realist">Realist</label>
       </li>
       <li>
-        <%= radio_button_tag :query, 'minimalist', class:"radio-button" %>
+        <%= radio_button_tag :query, 'minimalist', false, class:"radio-button" %>
         <label for="minimalist">Minimalist</label>
       </li>
     </ul>
