@@ -23,6 +23,7 @@
 
   <div class="cards-container">
     <% @artworks.each do |artwork| %>
+      <%= link_to artwork do %>
       <div class="artwork-card">
 
         <div class="artwork-photo">
@@ -35,20 +36,22 @@
 
         <div class="artwork-information">
           <div class="artwork-details">
-            <h2><%= link_to artwork.title, artwork %></h2>
+            <h2><%= artwork.title %></h2>
             <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+
             <div class="description-container">
               <p><%= artwork.description %></p>
             </div>
           </div>
+
           <div class="artwork-price-tag">
             <p><%= artwork.style %></p>
             <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
           </div>
-
         </div>
 
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -8,7 +8,17 @@
   h4, h3 {
     color: rgb(10,10,10);
   }
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 2px 2px 5px #fd9bca7e;
+  }
+  transition: 0.2s;
+  h2 {
+    color: $pink;
+  }
 }
+
+
 
 .artwork-photo img {
   height: 360px;
