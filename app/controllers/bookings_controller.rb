@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @artwork = Artwork.find(params[:artwork_id])
     @booking.artwork = @artwork
     @booking.user = current_user
-    # TODO: correct the paths below!!
     if @booking.save
       redirect_to booking_path(@booking)
     else
