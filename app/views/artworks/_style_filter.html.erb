@@ -1,0 +1,32 @@
+
+  <%= form_tag artworks_path, class: "d-flex align-items-center justify-content-center", method: :get do %>
+    <ul class="radio-buttons list-unstyled list-group-horizontal">
+      <li>
+        <%= radio_button_tag :query, 'impressionist', class:"radio-button" %>
+        <label for="impressionist">Impressionist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'abstract', class:"radio-button" %>
+        <label for="abstract">Abstract</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'cubist', class:"radio-button" %>
+        <label for="cubist">Cubist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'surrealist', class:"radio-button" %>
+        <label for="surrealist">Surrealist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'realist', class:"radio-button" %>
+        <label for="realist">Realist</label>
+      </li>
+      <li>
+        <%= radio_button_tag :query, 'minimalist', class:"radio-button" %>
+        <label for="minimalist">Minimalist</label>
+      </li>
+    </ul>
+    <%= button_tag :submit, class: "btn btn-primary filter-button" do %>
+      <i class="fa-solid fa-arrow-down-wide-short"></i>
+    <% end %>
+  <% end %>

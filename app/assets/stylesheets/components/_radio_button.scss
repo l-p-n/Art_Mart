@@ -1,0 +1,30 @@
+input[type="radio"] {
+	accent-color: $pink;
+  appearance: none;
+  width: 15px;
+	height: 15px;
+	border: 1px solid $red;
+	border-radius: 50%;
+  padding: 2px;
+	background-clip: content-box;
+  transition: 0.3s;
+}
+
+input[type="radio"]:checked {
+	background-color: $pink;
+}
+
+label {
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.radio-buttons {
+  margin: 0px;
+}
+
+.radio-buttons li {
+  margin: 0 16px;
+  display: inline;
+}
