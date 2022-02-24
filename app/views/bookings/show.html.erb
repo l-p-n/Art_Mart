@@ -1,19 +1,28 @@
 <div class="container">
-  <h1>Booking confirmation</h1>
+  <h1 class="pt-5 pb-2">Booking confirmation</h1>
+  <p>Your booking of <strong><%= @booking.artwork.title %></strong> is confirmed!</p>
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 mt-5">
-      <img src="<%= @booking.artwork.photo %>" alt="">
+    <div class="col-12 col-lg-6 mt-3 pr-3">
+      <%# <div class="artwork-img-lg"> %>
+        <% if @booking.artwork.photo.key %>
+          <%= cl_image_tag @booking.artwork.photo.key, width: 600, crop: :fill  %>
+        <% else %>
+          <img src="/assets/Hockney-1024x809.png" alt="">
+        <% end %>
+      <%# </div> %>
     </div>
-    <div class="col-12 col-lg-6 mt-5">
-      <h4><%= @booking.artwork.title %></h4>
-      <p><%= @booking.artwork.artist %></p>
-      <p><%= @booking.artwork.style %></p>
-      <p><%= @booking.artwork.date %></p>
+    <div class="col-12 col-lg-6 mt-3 pl-3">
+      <h2>Booking details</h2>
+      <h3><%= @booking.artwork.title %></h3>
+      <h4><%= @booking.artwork.artist %>  |  <%= @booking.artwork.date %></h5>
+      <p style="color:#F60201"><%= @booking.artwork.style %></p>
       <p><%= @booking.artwork.description %></p>
-      <p><%= @booking.artwork.price_per_day %></p>
-      <p><%= @booking.start_date %></p>
-      <p><%= @booking.end_date %></p>
+      <% fullname = @booking.artwork.user.first_name + " " + @booking.artwork.user.last_name %>
+      <p><strong>Artwork owner:</strong> <%= fullname %></p>
+      <p><strong>Booking start date:</strong> <%= @booking.start_date %></p>
+      <p><strong>Booking end date:</strong> <%= @booking.end_date %></p>
+      <p><strong>Price per day:</strong> £<%= @booking.artwork.price_per_day %></p>
       <% duration = @booking.end_date - @booking.start_date %>
       <% total_price = duration * @booking.artwork.price_per_day %>
       <h5>Total price: £<%= total_price %></h5>

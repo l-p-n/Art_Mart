@@ -1,0 +1,11 @@
+  <%= form_tag artworks_path, class: "artwork-search", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control text-input",
+    placeholder: "Search for an artwork..."
+  %>
+
+  <%= button_tag :submit, class: "btn btn-primary search-button" do %>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  <% end %>
+  <% end %>
