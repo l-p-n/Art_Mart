@@ -8,20 +8,6 @@
       <% end %>
     </div>
 
-    <div class="details-container">
-        <h1><%= @artwork.title%></h1>
-        <h2><%= @artwork.artist%></h2>
-        <h3><%= @artwork.date%></h3>
-        <%= @artwork.style%><br>
-        <p><%= @artwork.description%></p>
-        <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
-        <br>
-        <%= simple_form_for [@artwork, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Request booking", class: "btn btn-slim" %>
-        <% end %>
-
   <div class="details-container">
       <h1><%= @artwork.title%></h1>
       <h2><%= @artwork.artist%></h2>
