@@ -21,9 +21,19 @@
 }
 
 .booking-details {
-  text-align: right;
+  text-align: left;
 }
 
-.booking-over {
+.booking-overview {
+  text-align: right;
+  color: $pink !important;
+  font-size: 14px;
+}
+
+.artwork-details-my-bookings {
+  text-align: left;
+}
+
+.artwork-price-tag-my-bookings {
   text-align: left;
 }
