@@ -1,0 +1,27 @@
+.artwork-search {
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(20, 20, 20, 0.2);
+  display: flex;
+  width: 75%;
+  margin: 24px auto;
+  .text-input {
+    border-radius: 20px 0 0 20px;
+  }
+  .search-button {
+    border-radius: 0 20px 20px 0;
+    i {
+      font-size: 20px;
+      color: $red;
+    }
+  }
+  .search-button:hover {
+    i {
+      color: black;
+    }
+  }
+}
+
+.filter-button {
+  color: $red;
+  box-shadow: 2px 2px 5px rgba(20, 20, 20, 0.2);
+}

@@ -12,11 +12,14 @@
     Browse today and discover some of the best artists in history! </p>
 
   </div>
-
+  <div class="my-5">
   <%= render "search" %>
-  <%= render "style_filter" %>
+  </div>
+  <div class="my-5">
+    <%= render "style_filter" %>
+  </div>
 
-  <h2 class="my-4">Browse artworks</h2>
+  <h2 class="my-3">Browse artworks</h2>
 
   <div class="cards-container">
     <% @artworks.each do |artwork| %>

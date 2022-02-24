@@ -1,4 +1,3 @@
-  <h2> Filter by Style </h2>
 
   <%= form_tag artworks_path, class: "d-flex align-items-center justify-content-center", method: :get do %>
     <ul class="radio-buttons list-unstyled list-group-horizontal">
@@ -27,5 +26,7 @@
         <label for="minimalist">Minimalist</label>
       </li>
     </ul>
-    <%= submit_tag "Filter", class: "btn btn-primary" %>
+    <%= button_tag :submit, class: "btn btn-primary filter-button" do %>
+      <i class="fa-solid fa-arrow-down-wide-short"></i>
+    <% end %>
   <% end %>
