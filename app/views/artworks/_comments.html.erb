@@ -1,0 +1,9 @@
+<% @artwork.comments.each do |comment| %>
+        <h3>Author: <%= comment.user.first_name %> <%= comment.user.last_name %></h3>
+        <p>Comment: <%= comment.body %></p>
+      <% end %>
+
+      <%= simple_form_for [@artwork, @comment] do |f| %>
+        <%= f.input :body %>
+        <%= f.submit "Add comment", class: "btn btn-primary" %>
+      <% end %>

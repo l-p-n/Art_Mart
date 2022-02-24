@@ -7,13 +7,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.artwork = @artwork
+    @comment.artwork = Artwork.find(params[:artwork_id])
     if @comment.save
-      redirect_to @artwork, notice: 'Comment saved'
+      redirect_to @comment.artwork, notice: 'Comment saved'
     else
-      redirect_to @artwork, notice: 'Invalid comment'
+      redirect_to @comment.artwork, notice: 'Invalid comment'
     end
   end
+
+  def destroy
+  end
+
 
   private
 
