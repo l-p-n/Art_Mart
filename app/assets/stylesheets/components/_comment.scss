@@ -35,6 +35,10 @@
     border-radius: 0 2px 2px 0;
   }
 
+  .comment-button:hover {
+    color: $red;
+  }
+
   .avatar {
     height: 65px;
     margin: 0 36px 0 16px;
