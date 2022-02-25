@@ -81,18 +81,21 @@
 
             <div class="artwork-information">
               <div class="artwork-details-my-bookings">
-                <h2><%= link_to booking.artwork.title, artwork_path(booking.artwork_id) %></h2>
+                <h2><%= booking.artwork.title %></h2>
                 <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
               </div>
+
               <div class="booking-details">
                 <p>Rented to <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
                 <p><strong><%= booking.start_date.strftime("%B %d, %Y") %></strong> - <strong><%= booking.end_date.strftime("%B %d, %Y") %></strong></p>
                 <% booking_length = (booking.end_date - booking.start_date).to_i%>
               </div>
+
               <div class="booking-overview">
                 <h2><%= booking_length %> days</h2>
-                <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
+                <h2>£<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
               </div>
+            </div>
             </div>
           <% end %>
         <% end %>
@@ -164,7 +167,7 @@
                 </div>
                 <div class="booking-overview">
                   <h2><%= booking_length %> days</h2>
-                  <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
+                  <h2>£<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
                 </div>
               </div>
             </div>
