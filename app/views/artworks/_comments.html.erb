@@ -1,4 +1,4 @@
-<h2>Comments:</h2>
+<h2 class="mt-5">Comments:</h2>
 <% if @artwork.comments.count > 0 %>
   <% @artwork.comments.each do |comment| %>
     <div class="comment-container border-bottom">
@@ -12,8 +12,9 @@
 
       <div class="comment-text">
         <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
+        <div class="d-flex justify-content-between align-items-end">
         <p id="comment-<%= comment.id %>"><%= comment.body %></p>
-        <div class="d-flex align-items-end justify-content-end">
+        <%# <div class="d-flex align-items-end justify-content-end"> %>
           <% if comment.user == current_user %>
             <%= link_to comment_path(comment),
                                               method: :delete,
@@ -23,7 +24,7 @@
                                                 <i class="fa-solid fa-trash-can"></i>
                                               <% end %>
           <% end %>
-        </div>
+          </div>
       </div>
     </div>
   <% end %>
@@ -33,17 +34,18 @@
 
 <div id="new-comment-container">
   <%= simple_form_for [@artwork, @comment], remote: true, class: "inline" do |f| %>
-    <div class="d-flex justify-content-center">
-      <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
-      <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
-        <i class="fa-solid fa-paper-plane"></i>
-      <% end %>
+    <div class="d-flex justify-content-start">
       <% if current_user.photo.key %>
         <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
       <% else %>
         <%= image_tag "default_avatar.png", class: "avatar" %>
       <% end %>
       <h4>Posting as <%= current_user.first_name %> <%= current_user.last_name %></h4>
+      <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
+      <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
+        <i class="fa-solid fa-paper-plane"></i>
+      <% end %>
+
     </div>
   <% end %>
 </div>

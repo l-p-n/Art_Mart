@@ -31,50 +31,53 @@
     <div class="tab-pane fade show active" id="my-collection" role="tabpanel" aria-labelledby="home-tab">
       <div class="cards-my-account-container">
         <% @user.artworks.each do |artwork| %>
-          <div class="artwork-card">
+          <%= link_to artwork do %>
+            <div class="artwork-card">
 
-            <div class="artwork-photo">
-              <% if artwork.photo.key %>
-                <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
-              <% else %>
-                <img src="/assets/Hockney-1024x809.png" alt="">
-              <% end %>
-            </div>
+              <div class="artwork-photo">
+                <% if artwork.photo.key %>
+                  <%= cl_image_tag artwork.photo.key, height: 360, width: 240, crop: :fill %>
+                <% else %>
+                  <img src="/assets/Hockney-1024x809.png" alt="">
+                <% end %>
+              </div>
 
-            <div class="artwork-information">
-              <div class="artwork-details">
-                <h2><%= link_to artwork.title, artwork %></h2>
-                <h4><%= artwork.artist %> | <%= artwork.date %></h4>
-                <div class="description-container">
-                  <p><%= artwork.description %></p>
+              <div class="artwork-information">
+                <div class="artwork-details">
+                  <h2><%= artwork.title %></h2>
+                  <h4><%= artwork.artist %> | <%= artwork.date %></h4>
+                  <div class="description-container">
+                    <p><%= artwork.description %></p>
+                  </div>
                 </div>
-              </div>
-              <div class="artwork-price-tag">
-                <p><%= artwork.style %></p>
-                <h3><strong>£<%= artwork.price_per_day %></strong> per day</h3>
+                <div class="artwork-price-tag">
+                  <p><%= artwork.style %></p>
+                  <h3><strong>£<%= artwork.price_per_day.to_i %></strong> per day</h3>
+                </div>
+
               </div>
 
             </div>
-
-          </div>
+          <% end %>
         <% end %>
       </div>
-      <%= link_to "Upload a new artwork", new_artwork_path, class: "btn btn-slim", id: "upload-artwork" %>
+      <%= link_to "Upload a new artwork", new_artwork_path, class: "btn btn-slim mt-5", id: "upload-artwork" %>
     </div>
 
     <div class="tab-pane fade" id="my-bookings" role="tabpanel" aria-labelledby="profile-tab">
       <div class="cards-my-account-container">
         <% @artworks_bookings.each do |booking| %>
-        <% if booking.status == "approved" %>
-          <div class="artwork-card">
+          <% if booking.status == "approved" %>
+            <%= link_to booking do %>
+              <div class="artwork-card">
 
-            <div class="artwork-photo">
-              <% if booking.artwork.photo.key %>
-                <%= cl_image_tag booking.artwork.photo.key, height: 360, width: 240, crop: :fill %>
-              <% else %>
-                <img src="/assets/Hockney-1024x809.png" alt="">
-              <% end %>
-            </div>
+                <div class="artwork-photo">
+                  <% if booking.artwork.photo.key %>
+                    <%= cl_image_tag booking.artwork.photo.key, height: 360, width: 240, crop: :fill %>
+                  <% else %>
+                    <img src="/assets/Hockney-1024x809.png" alt="">
+                  <% end %>
+                </div>
 
             <div class="artwork-information">
               <div class="artwork-details-my-bookings">
@@ -91,16 +94,17 @@
                 <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
               </div>
             </div>
-          </div>
           <% end %>
         <% end %>
-      </div>
+      <% end %>
+    </div>
     </div>
 
     <div class="tab-pane fade" id="my-requests" role="tabpanel" aria-labelledby="requests-tab">
       <div class="cards-my-account-container">
         <% @artworks_bookings.each do |booking| %>
           <% unless booking.status == "approved" || booking.status == "declined" %>
+
             <div class="artwork-card">
               <div class="artwork-photo">
                 <% if booking.artwork.photo.key %>
@@ -111,7 +115,7 @@
               </div>
               <div class="artwork-information">
                 <div class="artwork-details">
-                  <h2><%= link_to booking.artwork.title, artwork_path %></h2>
+                  <h2><%= link_to booking.artwork.title, artwork_path(booking.artwork) %></h2>
                   <h4 style="margin-bottom:15px;"><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
                 </div>
                 <div class="booking-details">
@@ -121,7 +125,7 @@
                 </div>
                 <div class="booking-overview pt-2">
                   <h2><%= booking_length %> days</h2>
-                  <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
+                  <h2 style="margin-bottom:0px;">£<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
                   <%= link_to 'Approve', approve_booking_path(booking), class: "btn btn-slim", method: :post %>
                   <%= link_to 'Decline', decline_booking_path(booking), class: "btn btn-orange", method: :post %>
                 </div>
@@ -137,7 +141,8 @@
       <div class="cards-my-account-container">
         <% @user.bookings.each do |booking| %>
           <% if booking.status == "approved" %>
-            <div class="artwork-card">
+            <%= link_to booking do %>
+              <div class="artwork-card">
 
               <div class="artwork-photo">
                 <% if booking.artwork.photo.key %>
@@ -149,7 +154,7 @@
 
               <div class="artwork-information">
                 <div class="artwork-details">
-                  <h2><%= link_to booking.artwork.title, artwork_path %></h2>
+                  <h2><%= booking.artwork.title %></h2>
                   <h4><%= booking.artwork.artist %> | <%= booking.artwork.date %></h4>
                 </div>
                 <div class="booking-details">
@@ -163,8 +168,9 @@
                 </div>
               </div>
             </div>
-            <% end %>
+          <% end %>
         <% end %>
+      <% end %>
       </div>
     </div>
   </div>

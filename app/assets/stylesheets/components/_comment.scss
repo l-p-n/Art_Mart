@@ -24,6 +24,7 @@
   align-items: center;
 
   .form-control {
+    margin-left: 36px;
     width: 750px;
     height: 70px;
   }
@@ -34,9 +35,13 @@
     border-radius: 0 2px 2px 0;
   }
 
+  .comment-button:hover {
+    color: $red;
+  }
+
   .avatar {
     height: 65px;
-    margin: 0 24px 0 36px;
+    margin: 0 36px 0 16px;
   }
 
   textarea {

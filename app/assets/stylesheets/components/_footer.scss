@@ -1,0 +1,18 @@
+.artmart-footer {
+  background-color: $pink;
+  height: 56px;
+  margin-top: 80px;
+
+  .footer-socials {
+    font-size: 26px;
+    padding-top: 10px;
+    a {
+      color: $red;
+      margin: 0 24px;
+      transition: 0.2s;
+    }
+    i:hover {
+      color: #CA7CA2;
+    }
+  }
+}
