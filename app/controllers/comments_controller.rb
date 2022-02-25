@@ -17,6 +17,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @artwork = @comment.artwork
+    @comment.destroy
+    redirect_to artwork_path(@artwork, anchor: "new-comment-container")
   end
 
 
@@ -25,4 +29,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:user, :artwork, :body)
   end
+
 end

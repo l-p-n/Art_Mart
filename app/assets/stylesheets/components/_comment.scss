@@ -3,6 +3,9 @@
   margin-bottom: 24px;
   padding: 16px;
   width: 100%;
+  a {
+    font-size: 19px;
+  }
 }
 
 .comment-text-input {
@@ -17,7 +20,7 @@
   width: 100%;
 }
 
-.new-comment-container {
+#new-comment-container {
   align-items: center;
 
   .form-control {
