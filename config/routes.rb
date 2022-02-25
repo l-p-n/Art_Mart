@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:destroy]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 
   resources :bookings, only: [:show]
 
