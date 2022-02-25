@@ -5,11 +5,12 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @artwork = Artwork.find(params[:artwork_id])
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.artwork = Artwork.find(params[:artwork_id])
+    @comment.artwork = @artwork
     if @comment.save
-      redirect_to @comment.artwork, notice: 'Comment saved'
+      redirect_to artwork_path(@artwork, anchor: "comment-#{@comment.id}")
     else
       redirect_to @comment.artwork, notice: 'Invalid comment'
     end

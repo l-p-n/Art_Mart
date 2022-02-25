@@ -18,6 +18,8 @@
 }
 
 .new-comment-container {
+  align-items: center;
+
   .form-control {
     width: 750px;
     height: 70px;
@@ -25,10 +27,20 @@
 
   .comment-button {
     height: 70px;
-    width: 50px;
+    width: 60px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .avatar {
+    height: 65px;
+    margin: 0 24px 0 36px;
   }
 
   textarea {
     resize: none;
+  }
+
+  h4 {
+    padding-top: 20px;
   }
 }
