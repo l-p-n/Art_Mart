@@ -1,33 +1,34 @@
 <h2>Comments:</h2>
-<% @artwork.comments.each do |comment| %>
-  <div class="comment-container border-bottom">
-    <div class = "comment-user-img">
-      <% if comment.user.photo.key %>
-        <%= cl_image_tag comment.user.photo.key, class: "avatar", crop: :fill %>
-      <% else %>
-        <%= image_tag "default_avatar.png", class: "avatar" %>
-      <% end %>
-    </div>
-
-    <div class="comment-text">
-      <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
-      <p id="comment-<%= comment.id %>"><%= comment.body %></p>
-      <div class="d-flex align-items-end justify-content-end">
-        <% if comment.user == current_user %>
-          <%= link_to comment_path(comment),
-                                            method: :delete,
-                                            class: "del",
-                                            remote: true,
-                                            data: { confirm: "Are you sure?" } do %>
-                                              <i class="fa-solid fa-trash-can"></i>
-                                            <% end %>
+<% if @artwork.comments.count > 0 %>
+  <% @artwork.comments.each do |comment| %>
+    <div class="comment-container border-bottom">
+      <div class = "comment-user-img">
+        <% if comment.user.photo.key %>
+          <%= cl_image_tag comment.user.photo.key, class: "avatar", crop: :fill %>
+        <% else %>
+          <%= image_tag "default_avatar.png", class: "avatar" %>
         <% end %>
       </div>
+
+      <div class="comment-text">
+        <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
+        <p id="comment-<%= comment.id %>"><%= comment.body %></p>
+        <div class="d-flex align-items-end justify-content-end">
+          <% if comment.user == current_user %>
+            <%= link_to comment_path(comment),
+                                              method: :delete,
+                                              class: "del",
+                                              remote: true,
+                                              data: { confirm: "Are you sure?" } do %>
+                                                <i class="fa-solid fa-trash-can"></i>
+                                              <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-
-  </div>
-
+  <% end %>
+<% else %>
+  <p>There are no comments yet! Why not tell the owner what you think of this piece?</p>
 <% end %>
 
 <div id="new-comment-container">
