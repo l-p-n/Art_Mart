@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.update(status: "approved")
       if @booking.status == "approved"
         flash[:notice] = "Booking successfully approved"
-        redirect_to user_path(current_user, anchor: my-rentals)
+        redirect_to user_path(current_user, anchor: "my-rentals")
       end
   end
 
@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     @booking.update(status: "declined")
       if @booking.status == "declined"
         flash[:notice] = "Booking declined"
-        redirect_to user_path(current_user, anchor: my-rentals)
+        redirect_to user_path(current_user, anchor: "my-rentals")
       end
   end
 
