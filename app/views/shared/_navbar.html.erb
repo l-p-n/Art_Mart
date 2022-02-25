@@ -16,7 +16,8 @@
             <%= link_to "Browse Artworks", artworks_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown d-flex align-items-center">
-            <%= image_tag "default_avatar.png", class: "avatar dropdown-toggle nav-avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle nav-avatar", crop: :fill, id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My account", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Upload an artwork", new_artwork_path, class: "dropdown-item" %>

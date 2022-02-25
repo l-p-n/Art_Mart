@@ -1,0 +1,8 @@
+<h1>Edit user details:</h1>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :first_name %><br><br>
+  <%= f.input :last_name %><br><br>
+  <%= f.input :email %>
+  <%= f.input :photo%><br><br>
+  <%= f.submit %>
+<% end %>
