@@ -2,8 +2,8 @@
 <% @artwork.comments.each do |comment| %>
   <div class="comment-container border-bottom">
     <div class = "comment-user-img">
-      <% if current_user.photo.key %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
+      <% if comment.user.photo.key %>
+        <%= cl_image_tag comment.user.photo.key, class: "avatar", crop: :fill %>
       <% else %>
         <%= image_tag "default_avatar.png", class: "avatar" %>
       <% end %>
@@ -37,7 +37,11 @@
       <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
         <i class="fa-solid fa-paper-plane"></i>
       <% end %>
-      <%= image_tag "default_avatar.png", class: "avatar" %>
+      <% if current_user.photo.key %>
+        <%= cl_image_tag comment.user.photo.key, class: "avatar", crop: :fill %>
+      <% else %>
+        <%= image_tag "default_avatar.png", class: "avatar" %>
+      <% end %>
       <h4>Posting as <%= current_user.first_name %> <%= current_user.last_name %></h4>
     </div>
   <% end %>
