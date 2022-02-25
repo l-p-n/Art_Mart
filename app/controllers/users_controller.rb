@@ -8,5 +8,8 @@ class UsersController < ApplicationController
     @artworks_bookings = Booking.all.select do |booking|
       booking.artwork.user == current_user
     end
+    @pending_artworks_bookings = @artworks_bookings.select do |booking|
+      booking.status != "approved" || "declined"
+    end
   end
 end
