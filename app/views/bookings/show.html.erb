@@ -25,8 +25,8 @@
       <p><%= @booking.artwork.description %></p>
       <br>
       <p>From the collection of<strong> <%= fullname %></strong></p>
-      <p>Requested from<strong> <%= @booking.start_date %></strong> until <strong><%= @booking.end_date %></strong></p>
-      <p><strong>£<%= @booking.artwork.price_per_day.to_i %></strong> per day</p>
+      <p>Requested from<strong> <%= @booking.start_date.strftime("%B %d, %Y") %></strong> until <strong><%= @booking.end_date.strftime("%B %d, %Y") %></strong></p>
+      <p><strong>£<%= @booking.artwork.price_per_day %></strong> per day</p>
       <% duration = @booking.end_date - @booking.start_date %>
       <% total_price = duration * @booking.artwork.price_per_day.to_i %>
       <br>
