@@ -16,3 +16,19 @@
 .comment-text {
   width: 100%;
 }
+
+.new-comment-container {
+  .form-control {
+    width: 750px;
+    height: 70px;
+  }
+
+  .comment-button {
+    height: 70px;
+    width: 50px;
+  }
+
+  textarea {
+    resize: none;
+  }
+}

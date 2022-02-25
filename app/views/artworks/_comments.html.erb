@@ -14,11 +14,13 @@
 
 <% end %>
 
+<div class="new-comment-container">
   <%= simple_form_for [@artwork, @comment], class: "inline" do |f| %>
-<div class="d-flex">
+    <div class="d-flex">
       <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
       <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
         <i class="fa-solid fa-paper-plane"></i>
       <% end %>
-</div>
+    </div>
   <% end %>
+</div>
