@@ -19,3 +19,17 @@
     color: $white;
   }
 }
+
+.btn-orange {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: $orange;
+  margin: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  &:hover {
+    background: $pink;
+    color: $white;
+  }
+}
