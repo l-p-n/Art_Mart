@@ -93,7 +93,7 @@
 
               <div class="booking-overview">
                 <h2><%= booking_length %> days</h2>
-                <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
+                <h2>£<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
               </div>
             </div>
             </div>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="booking-overview">
                   <h2><%= booking_length %> days</h2>
-                  <h2>£<%= (booking_length * booking.artwork.price_per_day).round(2) %></h2>
+                  <h2>£<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
                 </div>
               </div>
             </div>
