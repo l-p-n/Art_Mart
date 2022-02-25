@@ -19,7 +19,9 @@
       <%= simple_form_for [@artwork, @booking] do |f| %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Request booking", class: "btn btn-slim" %>
+      <div class="d-flex justify-content-end">
+      <%= f.submit "Request booking", id: "submit-form", class: "btn btn-slim" %>
+      </div>
       <% end %>
    </div>
 
