@@ -2,7 +2,11 @@
 <% @artwork.comments.each do |comment| %>
   <div class="comment-container border-bottom">
     <div class = "comment-user-img">
-      <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
+      <% if current_user.photo.key %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
+      <% else %>
+        <%= image_tag "default_avatar.png", class: "avatar" %>
+      <% end %>
     </div>
 
     <div class="comment-text">
