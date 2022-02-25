@@ -28,7 +28,7 @@
     </div>
   <% end %>
 <% else %>
-  <p>There are no comments yet! Why not tell the owner what you think of this piece?</p>
+  <p>There are no comments yet! Why not tell the owner what you think of this piece?</p><br><br><br>
 <% end %>
 
 <div id="new-comment-container">
@@ -39,7 +39,7 @@
         <i class="fa-solid fa-paper-plane"></i>
       <% end %>
       <% if current_user.photo.key %>
-        <%= cl_image_tag comment.user.photo.key, class: "avatar", crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
       <% else %>
         <%= image_tag "default_avatar.png", class: "avatar" %>
       <% end %>
