@@ -14,7 +14,7 @@
       <h3><%= @artwork.date%></h3>
       <%= @artwork.style%><br>
       <p><%= @artwork.description%></p>
-      <p><strong>£<%= @artwork.price_per_day %></strong> per day</p>
+      <p><strong>£<%= @artwork.price_per_day.to_i %></strong> per day</p>
       <br>
       <%= simple_form_for [@artwork, @booking] do |f| %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
