@@ -6,19 +6,35 @@
     </div>
 
     <div class="comment-text">
-    <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
-    <p><%= comment.body %></p>
+      <h4><%= comment.user.first_name %> <%= comment.user.last_name %></h4>
+      <p id="comment-<%= comment.id %>"><%= comment.body %></p>
+      <div class="d-flex align-items-end justify-content-end">
+        <% if comment.user == current_user %>
+          <%= link_to comment_path(comment),
+                                            method: :delete,
+                                            class: "del",
+                                            remote: true,
+                                            data: { confirm: "Are you sure?" } do %>
+                                              <i class="fa-solid fa-trash-can"></i>
+                                            <% end %>
+        <% end %>
+      </div>
     </div>
+
 
   </div>
 
 <% end %>
 
-  <%= simple_form_for [@artwork, @comment], class: "inline" do |f| %>
-<div class="d-flex">
+<div id="new-comment-container">
+  <%= simple_form_for [@artwork, @comment], remote: true, class: "inline" do |f| %>
+    <div class="d-flex justify-content-center">
       <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
       <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
         <i class="fa-solid fa-paper-plane"></i>
       <% end %>
-</div>
+      <%= image_tag "default_avatar.png", class: "avatar" %>
+      <h4>Posting as <%= current_user.first_name %> <%= current_user.last_name %></h4>
+    </div>
   <% end %>
+</div>
