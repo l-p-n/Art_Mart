@@ -15,7 +15,7 @@
       <%= render "shared/navbar" %>
     <% end %>
     <body class="<%= @homepage ? "home-background" : "" %>">
-    <p class="notice"><%= notice %></p>
+    <p class="notice" style="margin-bottom:2px; margin-left:25px; color:red; font-size:20px;"><%= notice %><p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>

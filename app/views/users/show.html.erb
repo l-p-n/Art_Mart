@@ -123,12 +123,12 @@
                 </div>
                 <div class="booking-details">
                   <p>Requested by <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
-                  <p>From <strong><%= booking.start_date.strftime("%B %d, %Y") %> </strong>to <strong><%= booking.end_date.strftime("%B %d, %Y") %></strong></p>
+                  <p><strong><%= booking.start_date.strftime("%B %d, %Y") %> </strong>- <strong><%= booking.end_date.strftime("%B %d, %Y") %></strong></p>
                   <% booking_length = (booking.end_date - booking.start_date).to_i%>
                 </div>
                 <div class="booking-overview pt-2">
                   <h2>Total | <%= booking_length %> days</h2>
-                  <h2>Amount due | £<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
+                  <h2 style="margin-bottom:0px;">Amount due | £<%= (booking_length * booking.artwork.price_per_day.to_i).round(2) %></h2>
                   <%= link_to 'Approve', approve_booking_path(booking), class: "btn btn-slim", method: :post %>
                   <%= link_to 'Decline', decline_booking_path(booking), class: "btn btn-orange", method: :post %>
                 </div>
