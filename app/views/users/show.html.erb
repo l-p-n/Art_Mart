@@ -14,7 +14,8 @@
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#my-bookings" type="button" role="tab" aria-controls="profile" aria-selected="false">My bookings</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#my-requests" type="button" role="tab" aria-controls="requests" aria-selected="false">My requests <i class=<%= "fa-solid fa-bell-on" if (@pending_artworks_bookings.count > 0) %></i></button>
+    <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#my-requests" type="button" role="tab" aria-controls="requests" aria-selected="false">My requests </button>
+    <%# class=<%= "fa-solid fa-bell-on" if (@pending_artworks_bookings.count > 0) %>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#my-rentals" type="button" role="tab" aria-controls="contact" aria-selected="false">My rentals</button>
