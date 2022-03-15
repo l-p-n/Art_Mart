@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @user_page = true
     @user = current_user
     @artworks = @user.artworks
     # @bookings = @user.artworks.bookings

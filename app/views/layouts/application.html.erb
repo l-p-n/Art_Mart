@@ -18,7 +18,7 @@
     <p class="notice" style="margin-bottom:2px; margin-left:25px; color:red; font-size:20px;"><%= notice %><p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <% unless @homepage %>
+    <% unless @homepage || @user_page %>
       <%= render "shared/footer" %>
     <% end %>
   </body>
