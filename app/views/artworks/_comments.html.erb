@@ -35,17 +35,18 @@
 <div id="new-comment-container">
   <%= simple_form_for [@artwork, @comment], remote: true, class: "inline" do |f| %>
     <div class="d-flex justify-content-start">
-      <% if current_user.photo.key %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
-      <% else %>
-        <%= image_tag "default_avatar.png", class: "avatar" %>
+      <% if user_signed_in? %>
+        <% if current_user.photo.key %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
+        <% else %>
+          <%= image_tag "default_avatar.png", class: "avatar" %>
+        <% end %>
+        <h4>Posting as <%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
+        <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
+          <i class="fa-solid fa-paper-plane"></i>
+        <% end %>
       <% end %>
-      <h4>Posting as <%= current_user.first_name %> <%= current_user.last_name %></h4>
-      <%= f.input :body, label: false, required: false, class: "comment-text-input", placeholder: "Leave a comment..." %>
-      <%= button_tag :submit, class: "btn btn-primary comment-button" do %>
-        <i class="fa-solid fa-paper-plane"></i>
-      <% end %>
-
     </div>
   <% end %>
 </div>
