@@ -1,8 +1,10 @@
-<h1>Edit user details:</h1>
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :first_name %><br><br>
-  <%= f.input :last_name %><br><br>
-  <%= f.input :email %>
-  <%= f.input :photo%><br><br>
-  <%= f.submit %>
-<% end %>
+<div class="container" style="margin-top:150px; margin-bottom:98px;">
+  <h1>Edit user details:</h1><br>
+  <%= simple_form_for(@user) do |f| %>
+    <%= f.input :first_name %><br>
+    <%= f.input :last_name %><br>
+    <%= f.input :email %><br>
+    <%= f.input :photo%><br>
+    <%= f.submit class: "btn btn-slim" %>
+  <% end %>
+</div>
